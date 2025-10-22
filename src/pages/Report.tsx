@@ -51,19 +51,16 @@ const Report = () => {
       return;
     }
 
-    // Generate OTP and simulate sending to driver
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     
     toast.success("Report submitted successfully! OTP sent to driver.");
     
-    // Store data in localStorage for demo purposes
     localStorage.setItem("pendingReport", JSON.stringify({
       ...formData,
       otp,
       timestamp: new Date().toISOString(),
     }));
 
-    // Navigate to map view
     setTimeout(() => {
       navigate("/map");
     }, 2000);
@@ -118,7 +115,7 @@ const Report = () => {
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="your name"
+                  placeholder="Your Name"
                 />
               </div>
 
@@ -129,7 +126,7 @@ const Report = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="+91 452243221"
+                  placeholder="+91"
                 />
               </div>
 
@@ -180,3 +177,4 @@ const Report = () => {
 };
 
 export default Report;
+
