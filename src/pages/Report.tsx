@@ -129,7 +129,7 @@ const Report = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="+91"
+                  placeholder="+91 452243221"
                 />
               </div>
 
