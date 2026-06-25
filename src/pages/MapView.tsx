@@ -69,10 +69,9 @@ const MapView = () => {
     },
   ]);
 
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCKo21Fk7WY22JwIkhj1BbMNhKjVVz5dBM",
-  });
-
+const { isLoaded, loadError } = useLoadScript({
+  googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+});
   const getMarkerColor = (status: BinStatus) => {
     switch (status) {
       case "critical":
